@@ -6,11 +6,14 @@ using System.Threading.Tasks;
 
 namespace LineCompComputation
 {
-    public class LineCompComputation
+    internal class CompareLineComp
     {
+
+    
         double Linelength1;
         double LineLength2;
-        public void CalLineLength()
+    
+        public void CompareLine()
         {
             Console.Write(" Please Enter The Point 1 Coordinate X1:- ");
             int X1 = Convert.ToInt32(Console.ReadLine());
@@ -32,19 +35,19 @@ namespace LineCompComputation
             double LengthLine1 = Math.Pow(X2 - X1, 2) + Math.Pow(Y2 - Y1, 2);
             Linelength1 = Math.Sqrt(LengthLine1);
             double LengthLine2 = Math.Pow(X4 - X3, 2) + Math.Pow(Y4 - Y3, 2);
-            LineLength2= Math.Sqrt(LengthLine2);
-            Console.WriteLine("length of Line1 is {0} & Length of line is {1} ",Linelength1,LineLength2);
-        }
-        
-        public void ChkLIneLEnEqorNot()
-        {
-         if(Linelength1 == LineLength2)
+            LineLength2 = Math.Sqrt(LengthLine2);
+            Console.WriteLine("length of Line1 is {0} & Length of line is {1} ", Linelength1, LineLength2);
+            if (Linelength1.Equals(LengthLine2) == true)
             {
-                Console.WriteLine("Length of Line1 & length of Line is Equal");
+                Console.WriteLine("Both Lines having Equal Length");
             }
-            else
+            else if (Linelength1.CompareTo(LineLength2) == 1)
             {
-                Console.WriteLine("Length of Line1 & Length Of Line is Not Equal");
+                Console.WriteLine("First Line of Length is Greater Than Second Line");
+            }
+            else if (Linelength1.CompareTo(LineLength2) == -1)
+            {
+                Console.WriteLine("Second Line of Length is Greater Than First Line");
             }
         }
 
